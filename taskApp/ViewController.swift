@@ -9,9 +9,11 @@
 import UIKit
 import RealmSwift
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate {
+    
     @IBOutlet var tableView: UITableView!
     
+    @IBOutlet var searchBar: UISearchBar!
     // Realmインスタンスを取得する
     let realm = try! Realm()
 
@@ -25,6 +27,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        searchBar.delegate = self
         // Do any additional setup after loading the view.
     }
   //データの数
@@ -94,6 +97,17 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+            view.endEditing(true)
+    //tableViewを再読み込みする
+        tableView.reloadData()
+        }
     }
 
 

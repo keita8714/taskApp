@@ -11,50 +11,30 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="taskApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lFc-EO-1CQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pcU-RR-VYv">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="cPe-3I-SrR" detailTextLabel="EAA-54-a6o" style="IBUITableViewCellStyleSubtitle" id="z2I-ws-6Me">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z2I-ws-6Me" id="lcb-pl-V4a">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cPe-3I-SrR">
-                                                    <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EAA-54-a6o">
-                                                    <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="pcU-RR-VYv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DqE-nG-R0d"/>
-                            <constraint firstItem="pcU-RR-VYv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Noh-L2-Va9"/>
-                            <constraint firstAttribute="bottom" secondItem="pcU-RR-VYv" secondAttribute="bottom" id="rIf-te-dt0"/>
-                            <constraint firstItem="pcU-RR-VYv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wHL-cT-Dqi"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
+                        <searchBar key="tableHeaderView" contentMode="redraw" text="" showsSearchResultsButton="YES" showsCancelButton="YES" id="BWZ-aq-kp7">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>work</string>
+                                <string>private</string>
+                            </scopeButtonTitles>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="BTQ-AJ-Hg1">
+                                <rect key="frame" x="0.0" y="84" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BTQ-AJ-Hg1" id="Etp-fC-Vbx">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
                     <navigationItem key="navigationItem" id="DYO-9o-CFo">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="7Dz-KI-vxr">
                             <connections>
@@ -63,7 +43,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="pcU-RR-VYv" id="pAw-Ky-sSi"/>
+                        <outlet property="searchBar" destination="BWZ-aq-kp7" id="aEs-lL-mNZ"/>
+                        <outlet property="tableView" destination="lFc-EO-1CQ" id="wB3-5L-SCo"/>
                         <segue destination="VhG-YZ-Rc3" kind="show" identifier="cellSegue" id="Sqo-AM-Qoa"/>
                     </connections>
                 </viewController>
@@ -113,17 +94,15 @@
                                     <constraint firstAttribute="height" constant="120" id="efc-YR-u8i"/>
                                 </constraints>
                             </datePicker>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wDD-1v-Mxb">
-                                <rect key="frame" x="10" y="495" width="394" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カテゴリ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0C1-jM-Ha0">
                                 <rect key="frame" x="10" y="464" width="394" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bq9-oK-NCf">
+                                <rect key="frame" x="10" y="495" width="414" height="216"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -131,21 +110,21 @@
                             <constraint firstItem="Jya-NE-DCf" firstAttribute="leading" secondItem="DlX-fb-ait" secondAttribute="leading" constant="10" id="8uQ-dt-3gk"/>
                             <constraint firstItem="DlX-fb-ait" firstAttribute="trailing" secondItem="E5l-tW-zRY" secondAttribute="trailing" constant="10" id="CeA-Bt-e0v"/>
                             <constraint firstItem="0C1-jM-Ha0" firstAttribute="top" secondItem="h1U-ek-seb" secondAttribute="bottom" constant="10" id="ET5-ih-R9v"/>
-                            <constraint firstItem="DlX-fb-ait" firstAttribute="trailing" secondItem="wDD-1v-Mxb" secondAttribute="trailing" constant="10" id="Fas-qB-953"/>
-                            <constraint firstItem="wDD-1v-Mxb" firstAttribute="leading" secondItem="DlX-fb-ait" secondAttribute="leading" constant="10" id="HAH-Ud-qbe"/>
                             <constraint firstItem="E5l-tW-zRY" firstAttribute="leading" secondItem="DlX-fb-ait" secondAttribute="leading" constant="10" id="Hqr-tZ-aEI"/>
                             <constraint firstItem="pHO-1b-835" firstAttribute="leading" secondItem="DlX-fb-ait" secondAttribute="leading" constant="10" id="IfN-y0-KCJ"/>
                             <constraint firstItem="DlX-fb-ait" firstAttribute="trailing" secondItem="0C1-jM-Ha0" secondAttribute="trailing" constant="10" id="QaM-6j-a3u"/>
                             <constraint firstItem="DlX-fb-ait" firstAttribute="trailing" secondItem="Jya-NE-DCf" secondAttribute="trailing" constant="10" id="T0Y-VF-PGJ"/>
+                            <constraint firstItem="bq9-oK-NCf" firstAttribute="leading" secondItem="DlX-fb-ait" secondAttribute="leading" constant="10" id="X9t-cG-54R"/>
                             <constraint firstItem="h1U-ek-seb" firstAttribute="leading" secondItem="DlX-fb-ait" secondAttribute="leading" id="YC8-ZD-m0d"/>
                             <constraint firstItem="DlX-fb-ait" firstAttribute="trailing" secondItem="ecP-u1-kEl" secondAttribute="trailing" constant="10" id="bcA-pz-Ucp"/>
                             <constraint firstItem="h1U-ek-seb" firstAttribute="top" secondItem="ecP-u1-kEl" secondAttribute="bottom" constant="10" id="clY-U7-UPu"/>
                             <constraint firstItem="h1U-ek-seb" firstAttribute="trailing" secondItem="DlX-fb-ait" secondAttribute="trailing" id="eGy-W7-sUm"/>
+                            <constraint firstItem="bq9-oK-NCf" firstAttribute="top" secondItem="0C1-jM-Ha0" secondAttribute="bottom" constant="10" id="ffo-Xg-udz"/>
                             <constraint firstItem="E5l-tW-zRY" firstAttribute="top" secondItem="DlX-fb-ait" secondAttribute="top" constant="10" id="hnr-Z8-8Yd"/>
                             <constraint firstItem="Jya-NE-DCf" firstAttribute="top" secondItem="E5l-tW-zRY" secondAttribute="bottom" constant="10" id="jQx-h7-7Rh"/>
                             <constraint firstItem="ecP-u1-kEl" firstAttribute="leading" secondItem="DlX-fb-ait" secondAttribute="leading" constant="10" id="jSy-FB-Ftc"/>
                             <constraint firstItem="ecP-u1-kEl" firstAttribute="top" secondItem="pHO-1b-835" secondAttribute="bottom" constant="10" id="knt-Ik-LgK"/>
-                            <constraint firstItem="wDD-1v-Mxb" firstAttribute="top" secondItem="0C1-jM-Ha0" secondAttribute="bottom" constant="10" id="oTc-gn-XOz"/>
+                            <constraint firstItem="bq9-oK-NCf" firstAttribute="trailing" secondItem="DlX-fb-ait" secondAttribute="trailing" constant="10" id="vFN-i2-Yzx"/>
                             <constraint firstItem="DlX-fb-ait" firstAttribute="trailing" secondItem="pHO-1b-835" secondAttribute="trailing" constant="10" id="viu-6G-uBE"/>
                             <constraint firstItem="0C1-jM-Ha0" firstAttribute="leading" secondItem="DlX-fb-ait" secondAttribute="leading" constant="10" id="xOO-nF-2iU"/>
                         </constraints>
@@ -153,6 +132,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="IgS-D3-108"/>
                     <connections>
+                        <outlet property="categoryPickerview" destination="bq9-oK-NCf" id="9pI-qd-4yN"/>
                         <outlet property="contentsTextView" destination="ecP-u1-kEl" id="brI-m6-mn4"/>
                         <outlet property="datePicker" destination="h1U-ek-seb" id="qAm-F2-skt"/>
                         <outlet property="titleTextField" destination="Jya-NE-DCf" id="6cK-GD-7bd"/>

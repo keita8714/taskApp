@@ -10,15 +10,31 @@ import UIKit
 import RealmSwift
 import UserNotifications
 
-class InputViewController: UIViewController {
+class InputViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return list.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return list[row]
+    }
+    
     @IBOutlet var titleTextField: UITextField!
     
     @IBOutlet var contentsTextView: UITextView!
     
     @IBOutlet var datePicker: UIDatePicker!
     
+    @IBOutlet var categoryPickerview: UIPickerView!
+    
     let realm = try! Realm()
     var task : Task!
+    var list = ["仕事","プライベート","勉強"]
+    
     
     
     override func viewDidLoad() {
@@ -30,6 +46,8 @@ class InputViewController: UIViewController {
             titleTextField.text = task.title
             contentsTextView.text = task.contents
             datePicker.date = task.date
+        categoryPickerview.dataSource = self
+        categoryPickerview.delegate = self
         
         }
     
