@@ -103,10 +103,18 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bq9-oK-NCf">
                                 <rect key="frame" x="10" y="495" width="414" height="216"/>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xuh-YG-Uqr">
+                                <rect key="frame" x="100" y="721" width="214" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="DlX-fb-ait" firstAttribute="trailing" secondItem="Xuh-YG-Uqr" secondAttribute="trailing" constant="100" id="2Lz-Sb-L4z"/>
                             <constraint firstItem="pHO-1b-835" firstAttribute="top" secondItem="Jya-NE-DCf" secondAttribute="bottom" constant="10" id="2WN-PU-iMO"/>
+                            <constraint firstItem="Xuh-YG-Uqr" firstAttribute="top" secondItem="bq9-oK-NCf" secondAttribute="bottom" constant="10" id="5oe-oO-9RG"/>
                             <constraint firstItem="Jya-NE-DCf" firstAttribute="leading" secondItem="DlX-fb-ait" secondAttribute="leading" constant="10" id="8uQ-dt-3gk"/>
                             <constraint firstItem="DlX-fb-ait" firstAttribute="trailing" secondItem="E5l-tW-zRY" secondAttribute="trailing" constant="10" id="CeA-Bt-e0v"/>
                             <constraint firstItem="0C1-jM-Ha0" firstAttribute="top" secondItem="h1U-ek-seb" secondAttribute="bottom" constant="10" id="ET5-ih-R9v"/>
@@ -125,6 +133,7 @@
                             <constraint firstItem="ecP-u1-kEl" firstAttribute="leading" secondItem="DlX-fb-ait" secondAttribute="leading" constant="10" id="jSy-FB-Ftc"/>
                             <constraint firstItem="ecP-u1-kEl" firstAttribute="top" secondItem="pHO-1b-835" secondAttribute="bottom" constant="10" id="knt-Ik-LgK"/>
                             <constraint firstItem="bq9-oK-NCf" firstAttribute="trailing" secondItem="DlX-fb-ait" secondAttribute="trailing" constant="10" id="vFN-i2-Yzx"/>
+                            <constraint firstItem="Xuh-YG-Uqr" firstAttribute="leading" secondItem="DlX-fb-ait" secondAttribute="leading" constant="100" id="vVz-vJ-rH7"/>
                             <constraint firstItem="DlX-fb-ait" firstAttribute="trailing" secondItem="pHO-1b-835" secondAttribute="trailing" constant="10" id="viu-6G-uBE"/>
                             <constraint firstItem="0C1-jM-Ha0" firstAttribute="leading" secondItem="DlX-fb-ait" secondAttribute="leading" constant="10" id="xOO-nF-2iU"/>
                         </constraints>
@@ -132,6 +141,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="IgS-D3-108"/>
                     <connections>
+                        <outlet property="categoryLabel" destination="bR2-40-RhZ" id="VpN-l4-AfD"/>
                         <outlet property="categoryPickerview" destination="bq9-oK-NCf" id="9pI-qd-4yN"/>
                         <outlet property="contentsTextView" destination="ecP-u1-kEl" id="brI-m6-mn4"/>
                         <outlet property="datePicker" destination="h1U-ek-seb" id="qAm-F2-skt"/>

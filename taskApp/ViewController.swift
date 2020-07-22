@@ -22,6 +22,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     // 以降内容をアップデートするとリスト内は自動的に更新される。
     var taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending: true)
     
+  
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,6 +102,18 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         view.endEditing(true)
+        let searchText = searchBar.text
+        
+        let realm = try! Realm()
+       
+        if searchText!.isEmpty {
+            taskArray = realm.objects(Task.self)
+        } else {
+            taskArray = realm
+                .objects(Task.self)
+                .filter("category BEGINSWITH %@", searchText)
+        }
+        tableView.reloadData()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

@@ -11,17 +11,7 @@ import RealmSwift
 import UserNotifications
 
 class InputViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return list.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return list[row]
-    }
     
     @IBOutlet var titleTextField: UITextField!
     
@@ -31,9 +21,12 @@ class InputViewController: UIViewController,UIPickerViewDataSource,UIPickerViewD
     
     @IBOutlet var categoryPickerview: UIPickerView!
     
+    @IBOutlet var categoryLabel: UIView!
     let realm = try! Realm()
     var task : Task!
     var list = ["仕事","プライベート","勉強"]
+    
+    var selctedCategory = String()
     
     
     
@@ -56,6 +49,7 @@ class InputViewController: UIViewController,UIPickerViewDataSource,UIPickerViewD
             self.task.title = self.titleTextField.text!
             self.task.contents = self.contentsTextView.text
             self.task.date = self.datePicker.date
+            self.task.category = selctedCategory
             self.realm.add(self.task, update: .modified)
         }
         setNotification(task: task)
@@ -106,6 +100,21 @@ class InputViewController: UIViewController,UIPickerViewDataSource,UIPickerViewD
             // キーボードを閉じる
             view.endEditing(true)
         }
+   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 
-        
+     selctedCategory = list[row] as String
+     
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return list.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return list[row]
+    }
     }
