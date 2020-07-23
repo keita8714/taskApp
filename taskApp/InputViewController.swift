@@ -38,9 +38,14 @@ class InputViewController: UIViewController,UIPickerViewDataSource,UIPickerViewD
 
             titleTextField.text = task.title
             contentsTextView.text = task.contents
+        if !task.category.isEmpty{
+            categoryPickerview.selectRow(list.firstIndex(of: task.category)!, inComponent: 0, animated: false)
+        }
+        selctedCategory = list[categoryPickerview.selectedRow(inComponent: 0)]
             datePicker.date = task.date
         categoryPickerview.dataSource = self
         categoryPickerview.delegate = self
+        
         
         }
     
@@ -102,7 +107,7 @@ class InputViewController: UIViewController,UIPickerViewDataSource,UIPickerViewD
         }
    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 
-     selctedCategory = list[row] as String
+    selctedCategory = list[row] as String
      
     }
     
