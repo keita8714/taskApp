@@ -38,13 +38,13 @@ class InputViewController: UIViewController,UIPickerViewDataSource,UIPickerViewD
 
             titleTextField.text = task.title
             contentsTextView.text = task.contents
-        if !task.category.isEmpty{
-            categoryPickerview.selectRow(list.firstIndex(of: task.category)!, inComponent: 0, animated: false)
-        }
-        selctedCategory = list[categoryPickerview.selectedRow(inComponent: 0)]
             datePicker.date = task.date
         categoryPickerview.dataSource = self
         categoryPickerview.delegate = self
+        if !task.category.isEmpty{
+                   categoryPickerview.selectRow(list.firstIndex(of: task.category)!, inComponent: 0, animated: false)
+               }
+               selctedCategory = list[categoryPickerview.selectedRow(inComponent: 0)]
         
         
         }
